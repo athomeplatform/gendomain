@@ -224,7 +224,8 @@
       "protobuf_type": "google.protobuf.Timestamp",
       "guregu_type": "null.Time",
       "go_nullable_type": "*time.Time",
-      "swagger_type": "time.Time"
+      "swagger_type": "time.Time",
+      "custom_annotation": "format:\"date-time\""
     },
     {
       "sql_type": "datetime2",
@@ -233,7 +234,8 @@
       "protobuf_type": "google.protobuf.Timestamp",
       "guregu_type": "null.Time",
       "go_nullable_type": "*time.Time",
-      "swagger_type": "time.Time"
+      "swagger_type": "time.Time",
+      "custom_annotation": "format:\"date-time\""
     },
     {
       "sql_type": "datetime",
@@ -242,7 +244,8 @@
       "protobuf_type": "google.protobuf.Timestamp",
       "guregu_type": "null.Time",
       "go_nullable_type": "*time.Time",
-      "swagger_type": "time.Time"
+      "swagger_type": "time.Time",
+      "custom_annotation": "format:\"date-time\""
     },
     {
       "sql_type": "time",
@@ -251,7 +254,8 @@
       "protobuf_type": "google.protobuf.Timestamp",
       "guregu_type": "null.Time",
       "go_nullable_type": "*time.Time",
-      "swagger_type": "time.Time"
+      "swagger_type": "time.Time",
+      "custom_annotation": "format:\"date-time\""
     },
     {
       "sql_type": "timestamp",
@@ -260,7 +264,8 @@
       "protobuf_type": "uint64",
       "guregu_type": "null.Time",
       "go_nullable_type": "*time.Time",
-      "swagger_type": "time.Time"
+      "swagger_type": "time.Time",
+      "custom_annotation": "format:\"date-time\""
     },
     {
       "sql_type": "timestamptz",
@@ -269,7 +274,8 @@
       "protobuf_type": "uint64",
       "guregu_type": "null.Time",
       "go_nullable_type": "*time.Time",
-      "swagger_type": "time.Time"
+      "swagger_type": "time.Time",
+      "custom_annotation": "format:\"date-time\""
     },
     {
       "sql_type": "smalldatetime",
@@ -278,7 +284,8 @@
       "protobuf_type": "google.protobuf.Timestamp",
       "guregu_type": "null.Time",
       "go_nullable_type": "*time.Time",
-      "swagger_type": "time.Time"
+      "swagger_type": "time.Time",
+      "custom_annotation": "format:\"date-time\""
     },
     {
       "sql_type": "decimal",
