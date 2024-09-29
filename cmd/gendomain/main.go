@@ -8,6 +8,8 @@ import (
 	"go/build"
 	"io"
 	"io/ioutil"
+	"log"
+	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -151,6 +153,10 @@ func loadContextMapping(conf *dbmeta.Config) error {
 }
 
 func main() {
+	go func() {
+		log.Println(http.ListenAndServe("localhost:6060", nil))
+	}()
+
 	//for i, arg := range os.Args {
 	//	fmt.Printf("[%2d] %s\n", i, arg)
 	//}
