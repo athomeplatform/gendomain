@@ -1,4 +1,4 @@
-module github.com/smallnest/gen
+module github.com/athomeplatform/gendomain
 
 go 1.16
 
