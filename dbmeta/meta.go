@@ -325,7 +325,6 @@ func LoadMeta(sqlType string, db *sql.DB, sqlDatabase, tableName string) (DbTabl
 
 // GenerateFieldsTypes FieldInfo slice from DbTableMeta
 func (c *Config) GenerateFieldsTypes(dbMeta DbTableMeta) ([]*FieldInfo, error) {
-
 	var fields []*FieldInfo
 	field := ""
 	for i, col := range dbMeta.Columns() {
@@ -343,6 +342,9 @@ func (c *Config) GenerateFieldsTypes(dbMeta DbTableMeta) ([]*FieldInfo, error) {
 
 		fieldName = Replace(c.FieldNamingTemplate, fieldName)
 		fieldName = checkDupeFieldName(fields, fieldName)
+
+		// fmt.Println(" >>> ColumnType: ", col.ColumnType())
+		// fmt.Println(" >>> DatabaseTypeName: ", col.DatabaseTypeName())
 
 		fi.GormAnnotation = createGormAnnotation(col)
 		fi.JSONAnnotation = createJSONAnnotation(c.JSONNameFormat, col)
@@ -363,8 +365,10 @@ func (c *Config) GenerateFieldsTypes(dbMeta DbTableMeta) ([]*FieldInfo, error) {
 			annotations = append(annotations, fi.XMLAnnotation)
 		}
 
-		if c.AddCustomAnnotation {
-			annotations = append(annotations, fi.CustomAnnotation)
+		if col.DatabaseTypeName() == "timestamp" {
+			if c.AddCustomAnnotation {
+				annotations = append(annotations, fi.CustomAnnotation)
+			}
 		}
 
 		if c.AddDBAnnotation {
@@ -373,6 +377,8 @@ func (c *Config) GenerateFieldsTypes(dbMeta DbTableMeta) ([]*FieldInfo, error) {
 
 		gogoTags := []string{fi.GormAnnotation, fi.JSONAnnotation, fi.XMLAnnotation, fi.DBAnnotation}
 		GoGoMoreTags := strings.Join(gogoTags, " ")
+
+		GoGoMoreTags = strings.TrimSuffix(GoGoMoreTags, " ")
 
 		if c.AddProtobufAnnotation {
 			annotation, err := createProtobufAnnotation(c.ProtobufNameFormat, col)
