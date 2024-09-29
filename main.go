@@ -23,7 +23,7 @@ import (
 	"github.com/logrusorgru/aurora"
 	_ "github.com/mattn/go-sqlite3"
 
-	"github.com/athomeplatform/gendomain/dbmeta"
+	"github.com/tarmtanin/iamgen/dbmeta"
 )
 
 var (
