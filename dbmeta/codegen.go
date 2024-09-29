@@ -8,7 +8,7 @@ import (
 	"path"
 	"time"
 
-	"github.com/tarmtanin/iamgen/utils"
+	"github.com/athomeplatform/gendomain/utils"
 
 	"go/format"
 	"io/ioutil"

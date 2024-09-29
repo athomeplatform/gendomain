@@ -1,4 +1,4 @@
-module github.com/tarmtanin/iamgen
+module github.com/athomeplatform/gendomain
 
 go 1.16
 

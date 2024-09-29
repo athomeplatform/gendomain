@@ -75,7 +75,7 @@ func_meta() {
     DEFAULT_META_OPTIONS="${DEFAULT_META_OPTIONS} --table=${TABLES}"
   fi
 
-  go run github.com/tarmtanin/iamgen/_test/dbmeta \
+  go run github.com/athomeplatform/gendomain/_test/dbmeta \
     --sqltype="${DB_TYPE}" \
     --connstr "${DB_CON}" \
     --database "${DB}" ${DEFAULT_META_OPTIONS}
