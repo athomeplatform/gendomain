@@ -20,11 +20,11 @@
     },
     {
       "sql_type": "tinyint",
-      "go_type": "int32",
+      "go_type": "bool",
       "json_type": "Integer",
       "protobuf_type": "int32",
       "guregu_type": "null.Int",
-      "go_nullable_type": "*int32",
+      "go_nullable_type": "*bool",
       "swagger_type": "int"
     },
     {
