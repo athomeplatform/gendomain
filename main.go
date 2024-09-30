@@ -641,10 +641,14 @@ func generate(conf *dbmeta.Config) error {
 		}
 	}
 
-	err = conf.WriteTemplate(ModelBaseTmpl, data, filepath.Join(modelDir, "model_base.go"))
-	if err != nil {
-		fmt.Print(au.Red(fmt.Sprintf("Error writing file: %v\n", err)))
-		os.Exit(1)
+	// TODO use flag
+	if false {
+		err = conf.WriteTemplate(ModelBaseTmpl, data, filepath.Join(modelDir, "model_base.go"))
+		if err != nil {
+			fmt.Print(au.Red(fmt.Sprintf("Error writing file: %v\n", err)))
+			os.Exit(1)
+		}
+
 	}
 
 	if *modGenerate {
