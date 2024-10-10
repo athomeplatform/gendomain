@@ -47,6 +47,8 @@ var commonInitialisms = map[string]bool{
 	"XML":   true,
 	"ACL":   true,
 	"GP":    true,
+	"INV":   true,
+	"IR":    true,
 }
 
 var intToWordMap = []string{
