@@ -289,12 +289,12 @@
     },
     {
       "sql_type": "decimal",
-      "go_type": "float64",
+      "go_type": "decimal.Decimal",
       "json_type": "Float",
-      "protobuf_type": "float",
+      "protobuf_type": "decimal.Decimal",
       "guregu_type": "null.Float",
-      "go_nullable_type": "*float64",
-      "swagger_type": "float64"
+      "go_nullable_type": "*decimal.Decimal",
+      "swagger_type": "number"
     },
     {
       "sql_type": "double",
