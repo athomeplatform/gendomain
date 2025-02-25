@@ -106,7 +106,7 @@ func init() {
 	goopt.Description = func() string {
 		return "ORM and RESTful API generator for SQl databases"
 	}
-	goopt.Version = "v0.0.17 (19/02/2025)"
+	goopt.Version = "v0.0.18 (25/02/2025)"
 	goopt.Summary = `gen [-v] --sqltype=mysql --connstr "user:password@/dbname" --database <databaseName> --module=example.com/example [--json] [--gorm] [--guregu] [--generate-dao] [--generate-proj]
 git fetch up
            sqltype - sql database type such as [ mysql, mssql, postgres, sqlite, etc. ]

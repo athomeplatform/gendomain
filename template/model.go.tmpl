@@ -8,7 +8,7 @@ import (
 
 var (
     _ = time.Second
-    _ = "github.com/shopspring/decimal"
+    _ = decimal.Decimal{}
 )
 
 /*
@@ -31,7 +31,7 @@ Comments
 
 */
 
- {{if not .Config.AddProtobufAnnotation }}
+{{if not .Config.AddProtobufAnnotation }}
 
 // {{.StructName}} struct is a row record of the {{.TableName}} table in the {{.DatabaseName}} database
 type {{.StructName}} struct {
