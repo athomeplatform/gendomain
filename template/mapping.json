@@ -192,12 +192,12 @@
     },
     {
       "sql_type": "json",
-      "go_type": "string",
+      "go_type": "datatypes.JSON",
       "json_type": "Text",
       "protobuf_type": "string",
       "guregu_type": "datatypes.JSON",
-      "go_nullable_type": "*string",
-      "swagger_type": "string"
+      "go_nullable_type": "*datatypes.JSON",
+      "swagger_type": "object"
     },
     {
       "sql_type": "jsonb",
