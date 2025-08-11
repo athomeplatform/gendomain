@@ -43,3 +43,8 @@ example/daos/
 example/models/
 tests/
 .env
+
+
+
+.DS_Store
+**/.DS_Store
