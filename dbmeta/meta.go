@@ -375,6 +375,11 @@ func (c *Config) GenerateFieldsTypes(dbMeta DbTableMeta) ([]*FieldInfo, error) {
 			annotations = append(annotations, fi.DBAnnotation)
 		}
 
+		// add swaggertype only when final Go type is exactly datatypes.JSON
+		if sw := createSwaggerAnnotationForGoType(valueType); sw != "" {
+			annotations = append(annotations, sw)
+		}
+
 		gogoTags := []string{fi.GormAnnotation, fi.JSONAnnotation, fi.XMLAnnotation, fi.DBAnnotation}
 		GoGoMoreTags := strings.Join(gogoTags, " ")
 
@@ -892,4 +897,13 @@ func checkDupeProtoBufFieldName(fields []*FieldInfo, fieldName string) string {
 func generateAlternativeName(name string) string {
 	name = name + "alt1"
 	return name
+}
+
+// put this near createCustomAnnotation / createProtobufAnnotation
+// Only add swagger annotation when the generated Go type is exactly datatypes.JSON
+func createSwaggerAnnotationForGoType(goType string) string {
+	if goType == "datatypes.JSON" || goType == "*datatypes.JSON" { // strictly only non-pointer go_type
+		return "swaggertype:\"object\""
+	}
+	return ""
 }
